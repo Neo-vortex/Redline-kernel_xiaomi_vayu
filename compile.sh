@@ -27,9 +27,9 @@ yellow='\033[0;33m'
 red='\033[0;31m'
 nocol='\033[0m'
 
-//make O=out CC=${COMPILER}  ARCH=${ARCH}  CROSS_COMPILE=${COMPILERDIR}/bin/aarch64-linux-gnu-   clean
-//make O=out CC=${COMPILER} ARCH=${ARCH} CROSS_COMPILE=${COMPILERDIR}/bin/aarch64-linux-gnu-    mrproper
-//make O=out CC=${COMPILER} ARCH=${ARCH} CROSS_COMPILE=${COMPILERDIR}/bin/aarch64-linux-gnu-  $DEFCONFIG
+make O=out CC=${COMPILER}  ARCH=${ARCH}  CROSS_COMPILE=${COMPILERDIR}/bin/aarch64-linux-gnu-   clean
+make O=out CC=${COMPILER} ARCH=${ARCH} CROSS_COMPILE=${COMPILERDIR}/bin/aarch64-linux-gnu-    mrproper
+make O=out CC=${COMPILER} ARCH=${ARCH} CROSS_COMPILE=${COMPILERDIR}/bin/aarch64-linux-gnu-  $DEFCONFIG
 
 Build_lld () {
 PATH="${COMPILERDIR}/bin:${PATH}" \
@@ -46,6 +46,7 @@ OBJDUMP=llvm-objdump \
 STRIP=llvm-strip \
 ld-name=${LINKER} \
 KBUILD_COMPILER_STRING="Proton Clang" 
+
 }
 
 # Make defconfig
